@@ -1,53 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css';
 
 function Navbar() {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const location = useLocation();
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
 
   const isActive = (path) => {
     return location.pathname === path;
   };
 
-  // Desktop Navigation
-  const DesktopNav = () => (
-    <nav className="navbar navbar-desktop">
-      <div className="logo">
-        <Link to="/">
-          <img src="/path/to/your/logo.png" alt="Logo" className="logo-img" />
-        </Link>
-      </div>
-      <div className="nav-links">
-        <Link to="/" className={`nav-link ${isActive('/') ? 'active' : ''}`}>
-          HOME
-        </Link>
-        <Link to="/profile" className={`nav-link ${isActive('/profile') ? 'active' : ''}`}>
-          EVENTS
-        </Link>
-        <Link to="/team" className={`nav-link ${isActive('/team') ? 'active' : ''}`}>
-          CONTACT
-        </Link>
-        <Link to="/about" className={`nav-link ${isActive('/about') ? 'active' : ''}`}>
-          ABOUT US
-        </Link>
-        
-      </div>
-      <button className="sign-in-btn">SIGN IN</button>
-    </nav>
-  );
-
   // Mobile Navigation (Bottom Nav)
-  const MobileNav = () => (
+  return (
     <nav className="navbar navbar-mobile">
       <Link to="/" className={`nav-item ${isActive('/') ? 'active' : ''}`}>
         <div className="nav-icon">
@@ -98,8 +61,6 @@ function Navbar() {
       </a>
     </nav>
   );
-
-  return isMobile ? <MobileNav /> : <DesktopNav />;
 }
 
 export default Navbar;

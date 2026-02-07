@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './Team.css';
-import Navbar from './Navbar'; // 🔥 IMPORT NAVBAR
 
 import img1 from '../images/151.jpg';
 import img4 from '../images/155.jpg';
@@ -182,8 +181,7 @@ const Team = () => {
 
   return (
     <>
-      {/* 🔥 NAVBAR */}
-      <Navbar />
+     
 
       <div className="team-container">
 
