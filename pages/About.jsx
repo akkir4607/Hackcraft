@@ -1,87 +1,137 @@
-// About.jsx
-import React from 'react';
-import './About.css';
-import Aboutt from './Aboutt';
-import Navbar from './Navbar'; // 🔥 IMPORT NAVBAR
+import React from "react";
+import "./About.css";
 
 const About = () => {
-  const features = [
+
+  const topFeatures = [
     {
-      icon: '<>',
-      title: 'Innovation Challenge',
-      description: '24 hours to design the future and break technological boundaries.',
-      delay: '0s'
+      icon: "<>",
+      title: "Innovation Challenge",
+      desc: "24 hours to design the future and break technological boundaries."
     },
     {
-      icon: '👥',
-      title: 'Collaborative Spirit',
-      description: 'Connect with brilliant minds from diverse backgrounds and skill sets',
-      delay: '0.1s'
+      icon: "👥",
+      title: "Collaborative Spirit",
+      desc: "Connect with brilliant minds from diverse backgrounds."
     },
     {
-      icon: '💡',
-      title: 'Cutting-Edge Tech',
-      description: 'Access to latest tools, APIs and technologies to bring your ideas to life',
-      delay: '0.2s'
+      icon: "💡",
+      title: "Cutting-Edge Tech",
+      desc: "Access modern tools, APIs, and platforms."
     },
     {
-      icon: '🏆',
-      title: 'Epic Rewards',
-      description: 'Compete for amazing prizes and recognition in the tech community',
-      delay: '0.3s'
+      icon: "🏆",
+      title: "Epic Rewards",
+      desc: "Compete for recognition and exciting prizes."
     }
   ];
 
+
+  const bottomFeatures = [
+    {
+      title: "Industry Mentorship",
+      desc: "Guidance from experienced industry leaders."
+    },
+    {
+      title: "Real-World Impact",
+      desc: "Build solutions that solve genuine problems."
+    },
+    {
+      title: "Networking Opportunities",
+      desc: "Create strong professional connections."
+    },
+    {
+      title: "Post-Event Support",
+      desc: "Mentorship, funding & scaling support."
+    }
+  ];
+
+
   return (
-    <>
-      {/* 🔥 NAVBAR */}
-      <Navbar />
+    <section className="about-section" id="about">
 
-      <section className="about-section" id="about">
-        <div className="cyber-grid"></div>
-        <div className="cyber-particles"></div>
-        
-        <div className="about-container">
-          <div className="about-header">
-            <h2 className="about-title">
-              About <span className="highlight">HACKCRAFT</span>
-            </h2>
-            <p className="about-description">
-              HACKCRAFT isn't just another hackathon—it's where innovation meets execution. 
-              Join us for an intense 24-hour journey where creativity, technology, and 
-              collaboration converge to create the future.
-            </p>
-          </div>
+      {/* Background */}
+      <div className="cyber-grid"></div>
 
-          <div className="features-grid">
-            {features.map((feature, index) => (
-              <div 
-                className="feature-card" 
-                key={index}
-                style={{ animationDelay: feature.delay }}
-              >
-                <div className="card-border"></div>
-                <div className="card-glow"></div>
-                
-                <div className="feature-icon">
-                  <span>{feature.icon}</span>
-                </div>
-                
-                <h3 className="feature-title">{feature.title}</h3>
-                <p className="feature-description">{feature.description}</p>
-                
-                <div className="corner top-left"></div>
-                <div className="corner top-right"></div>
-                <div className="corner bottom-left"></div>
-                <div className="corner bottom-right"></div>
-              </div>
-            ))}
-          </div>
 
-          <Aboutt />
+      <div className="about-container">
+
+        {/* ===== HEADER ===== */}
+        <div className="about-header">
+
+          <h2 className="about-title">
+            About <span className="highlight">HACKCRAFT</span>
+          </h2>
+
+          <p className="about-description">
+            HACKCRAFT isn't just another hackathon — it’s where innovation meets execution.
+            Join us for a 24-hour journey of creativity, collaboration, and technology.
+          </p>
+
         </div>
-      </section>
-    </>
+
+
+
+        {/* ===== TOP FEATURES ===== */}
+        <div className="features-grid">
+
+          {topFeatures.map((item, i) => (
+
+            <div
+              key={i}
+              className="feature-card"
+              style={{ animationDelay: `${i * 0.1}s` }}
+            >
+
+              <div className="feature-icon">{item.icon}</div>
+
+              <h3 className="feature-title">{item.title}</h3>
+
+              <p className="feature-description">{item.desc}</p>
+
+            </div>
+
+          ))}
+
+        </div>
+
+
+
+        {/* ===== DIVIDER ===== */}
+        <div className="about-divider">
+          What Makes HackCraft Special?
+        </div>
+
+
+
+        {/* ===== BOTTOM FEATURES ===== */}
+        <div className="aboutt-grid">
+
+          {bottomFeatures.map((item, i) => (
+
+            <div
+              key={i}
+              className="aboutt-card"
+              style={{ animationDelay: `${i * 0.1}s` }}
+            >
+
+              <h3 className="aboutt-card-title">
+                {item.title}
+              </h3>
+
+              <p className="aboutt-card-description">
+                {item.desc}
+              </p>
+
+            </div>
+
+          ))}
+
+        </div>
+
+      </div>
+
+    </section>
   );
 };
 

@@ -6,6 +6,7 @@ import Team from './Team';
 import Timeline from './Timeline';
 import Profile from './Profile';
 import About from './About';
+import Epic from './Epic';
 import img500 from '../images/500.png';
 import img501 from '../images/501.png';
 import img200 from '../images/200.png';
@@ -174,6 +175,7 @@ function Front() {
             <motion.div className="event-date">
               28th-29th MARCH 2026
             </motion.div>
+            <br></br>
 
             {/* Sponsors */}
             <motion.div className="sponsor-section">
@@ -198,8 +200,12 @@ function Front() {
           </motion.div>
         </div>
 
-        <About />
         <Profile />
+        <About />
+        <Timeline />
+        <Epic />
+        <Team />
+
       </div>
     </div>
   );

@@ -1,162 +1,237 @@
-import React from 'react';
-import './Epic.css';
-import Team from './Team';
-import img90 from '../images/215.png';
+import React, { useState } from "react";
+import "./Epic.css";
+
+import organiserLogo from "../images/500.png";
+import sponsorLogo from "../images/501.png";
 
 const Epic = () => {
+  const [popupType, setPopupType] = useState(null);
+
+  const openPopup = (type) => {
+    setPopupType(type);
+    document.body.style.overflow = "hidden";
+  };
+
+  const closePopup = () => {
+    setPopupType(null);
+    document.body.style.overflow = "auto";
+  };
+
   return (
-    <div className="epic-container">
-      <div className="content-wrapper">
-        <div className="header-section">
-          <h1 className="epic-title">
-            <span className="title-normal">Epic</span>
-            <span className="title-highlight"> Rewards</span>
-          </h1>
-          <p className="epic-subtitle">Compete for prizes, mentorship opportunities, and exclusive perks</p>
-        </div>
-
-        <div className="rewards-grid">
-          {/* 1st Place */}
-          <div className="reward-card card-gold">
-            <div className="card-glow"></div>
-            <div className="card-corner tl"></div>
-            <div className="card-corner tr"></div>
-            <div className="card-corner bl"></div>
-            <div className="card-corner br"></div>
-            
-            <div className="icon-wrapper">
-              <svg className="reward-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
-                <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
-                <path d="M4 22h16"></path>
-                <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
-                <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
-                <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path>
-              </svg>
-            </div>
-            
-            <h2 className="place-title">1st Place</h2>
-            
-            <ul className="rewards-list">
-              <li><span className="bullet"></span>Cash Prize</li>
-              <li><span className="bullet"></span>Mentorship Program</li>
-              <li><span className="bullet"></span>Funding Opportunities</li>
-              <li><span className="bullet"></span>Premium Tech Package</li>
-            </ul>
-          </div>
-
-          {/* 2nd Place */}
-          <div className="reward-card card-silver">
-            <div className="card-glow"></div>
-            <div className="card-corner tl"></div>
-            <div className="card-corner tr"></div>
-            <div className="card-corner bl"></div>
-            <div className="card-corner br"></div>
-            
-            <div className="icon-wrapper">
-              <svg className="reward-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <circle cx="12" cy="8" r="6"></circle>
-                <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path>
-              </svg>
-            </div>
-            
-            <h2 className="place-title">2nd Place</h2>
-            
-            <ul className="rewards-list">
-              <li><span className="bullet"></span>Cash Prize</li>
-              <li><span className="bullet"></span>Mentorship Program</li>
-              <li><span className="bullet"></span>Tech Package</li>
-              <li><span className="bullet"></span>Networking Access</li>
-            </ul>
-          </div>
-
-          {/* 3rd Place */}
-          <div className="reward-card card-bronze">
-            <div className="card-glow"></div>
-            <div className="card-corner tl"></div>
-            <div className="card-corner tr"></div>
-            <div className="card-corner bl"></div>
-            <div className="card-corner br"></div>
-            
-            <div className="icon-wrapper">
-              <svg className="reward-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M7.21 15 2.66 7.14a2 2 0 0 1 .13-2.2L4.4 2.8A2 2 0 0 1 6 2h12a2 2 0 0 1 1.6.8l1.6 2.14a2 2 0 0 1 .14 2.2L16.79 15"></path>
-                <path d="M11 12 5.12 2.2"></path>
-                <path d="m13 12 5.88-9.8"></path>
-                <path d="M8 7h8"></path>
-                <circle cx="12" cy="17" r="5"></circle>
-                <path d="M12 18v-2h-.5"></path>
-              </svg>
-            </div>
-            
-            <h2 className="place-title">3rd Place</h2>
-            
-            <ul className="rewards-list">
-              <li><span className="bullet"></span>Cash Prize</li>
-              <li><span className="bullet"></span>Tech Package</li>
-              <li><span className="bullet"></span>Networking Access</li>
-              <li><span className="bullet"></span>Certificate</li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Sponsors Section */}
-        <div className="sponsors-section">
-          <div className="sponsors-header">
-            <div className="header-line"></div>
-            <h2 className="sponsors-title">
-              <span className="lock-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <rect x="5" y="11" width="14" height="10" rx="2"></rect>
-                  <path d="M12 17v-3"></path>
-                  <path d="M8 11V7a4 4 0 0 1 8 0v4"></path>
-                </svg>
-              </span>
-              Secured By
-            </h2>
-            <div className="header-line"></div>
-          </div>
-
-          <div className="sponsors-grid">
-            <div className="sponsor-card">
-              <div className="sponsor-border"></div>
-              <div className="sponsor-content">
-                <div className="sponsor-image-wrapper">
-                  {/* Replace with actual sponsor logo */}
-                  <img src={img90} alt="Sponsor 1" className="sponsor-image" />
-                </div>
-              </div>
-              <div className="scan-line"></div>
-            </div>
-
-            <div className="sponsor-card">
-              <div className="sponsor-border"></div>
-              <div className="sponsor-content">
-                <div className="sponsor-image-wrapper">
-                  {/* Replace with actual sponsor logo */}
-                  <img src="sponsor-logo-2.png" alt="Sponsor 2" className="sponsor-image" />
-                </div>
-              </div>
-              <div className="scan-line"></div>
-            </div>
-
-            <div className="sponsor-card">
-              <div className="sponsor-border"></div>
-              <div className="sponsor-content">
-                <div className="sponsor-image-wrapper">
-                  {/* Replace with actual sponsor logo */}
-                  <img src="sponsor-logo-3.png" alt="Sponsor 3" className="sponsor-image" />
-                </div>
-              </div>
-              <div className="scan-line"></div>
-            </div>
-          </div>
-        </div>
-        <Team />
-      </div>
+    <section className="epic-section">
+      {/* Background Elements */}
+      <div className="cyber-grid-overlay"></div>
       
-    </div>
-    
+      <div className="epic-container">
+        {/* HEADER */}
+        <div className="epic-header">
+          <h1>EPIC REWARDS</h1>
+          <p>Compete. Build. Win. Connect.</p>
+        </div>
+
+        {/* ================= REWARDS ================= */}
+        <div className="rewards-section">
+          <h2 className="section-title">🏆 Prizes & Rewards</h2>
+
+          <div className="rewards-grid">
+            {/* 1st Place */}
+            <div className="reward-card gold">
+              <h3>🥇 1st Place</h3>
+              <ul>
+                <li>Grand Cash Prize</li>
+                <li>Exclusive Mentorship Program</li>
+                <li>Startup Funding Support</li>
+                <li>Premium Tech Kit & Swag</li>
+                <li>Featured on Our Platform</li>
+                <li>Industry Connect Session</li>
+              </ul>
+            </div>
+
+            {/* 2nd Place */}
+            <div className="reward-card silver">
+              <h3>🥈 2nd Place</h3>
+              <ul>
+                <li>Significant Cash Prize</li>
+                <li>Mentorship Sessions</li>
+                <li>Advanced Tech Package</li>
+                <li>Networking Access</li>
+                <li>Certificate of Excellence</li>
+                <li>Resource Library Access</li>
+              </ul>
+            </div>
+
+            {/* 3rd Place */}
+            <div className="reward-card bronze">
+              <h3>🥉 3rd Place</h3>
+              <ul>
+                <li>Cash Prize</li>
+                <li>Tech Goodies Package</li>
+                <li>Official Certificate</li>
+                <li>Community Access</li>
+                <li>Workshop Invitations</li>
+                <li>Career Guidance</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* ================= ORGANIZER ================= */}
+        <div className="org-section">
+          <h2>Major Organizer</h2>
+          <div className="org-card">
+            <img src={organiserLogo} alt="GITM" />
+            <span>Global Institute of Technology & Management</span>
+          </div>
+        </div>
+
+        {/* ================= SPONSORS ================= */}
+        <div className="partner-section">
+          <h2>Sponsors & Co-Powered</h2>
+          <div className="partner-grid">
+            <div className="partner-card">
+              <img src={sponsorLogo} alt="Alactic Inc" />
+              <span>Alactic Inc. (Co-Powered)</span>
+            </div>
+            {/* Additional sponsors can be added here */}
+          </div>
+        </div>
+
+        {/* ================= COMMUNITY ================= */}
+        <div className="partner-section">
+          <h2>Community Partners</h2>
+          <div className="partner-grid">
+            <a
+              href="https://www.teameklavya.xyz/"
+              target="_blank"
+              rel="noreferrer"
+              className="partner-card"
+            >
+              <img
+                src="https://www.teameklavya.xyz/logo.png"
+                alt="Team Eklavya"
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = "https://via.placeholder.com/120x70/0d0d0d/00ffff?text=Team+Eklavya";
+                }}
+              />
+              <span>Team Eklavya</span>
+            </a>
+            {/* Additional community partners can be added here */}
+          </div>
+        </div>
+
+        {/* ================= CTA ================= */}
+        <div className="cta-section">
+          <button
+            className="cta-btn primary"
+            onClick={() => openPopup("sponsor")}
+          >
+            Become a Sponsor
+          </button>
+
+          <button
+            className="cta-btn"
+            onClick={() => openPopup("partner")}
+          >
+            Become a Community Partner
+          </button>
+        </div>
+
+        {/* ================= POPUP ================= */}
+        {popupType && (
+          <div className="epic-popup-overlay" onClick={closePopup}>
+            <div
+              className="epic-popup"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                className="popup-close"
+                onClick={closePopup}
+              >
+                ×
+              </button>
+
+              <div className="popup-content">
+                {/* Poster Image */}
+                <div className="popup-poster-container">
+                  <img 
+                    src={popupType === "sponsor" 
+                      ? "/Call for sponsors.png" 
+                      : "/Call for community partners.png"
+                    }
+                    alt={popupType === "sponsor" 
+                      ? "Call for Sponsors" 
+                      : "Call for Community Partners"
+                    }
+                    className="popup-poster"
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.style.display = 'none';
+                    }}
+                  />
+                  <div className="popup-poster-overlay">
+               
+                  </div>
+                </div>
+
+                <h3>
+                  {popupType === "sponsor"
+                    ? "Sponsor With Us"
+                    : "Partner With Us"}
+                </h3>
+
+                <p>
+                  Join HackCraft 3.0 and connect with innovators, students, 
+                  and industry leaders.
+                  {popupType === "sponsor" 
+                    ? " Gain brand visibility and access to top tech talent." 
+                    : " Grow your community and collaborate on impactful projects."
+                  }
+                </p>
+
+                {/* SPONSOR POPUP */}
+                {popupType === "sponsor" && (
+                  <div className="popup-actions">
+                    <a href="/Welcome Sponsors.pdf" target="_blank" rel="noopener noreferrer">
+                      📋 Welcome Kit
+                    </a>
+                    <a href="/Sponsors Proposal.pdf" target="_blank" rel="noopener noreferrer">
+                      📄 Detailed Proposal
+                    </a>
+                    <a
+                      href="https://forms.gle/gAQ9vHFUxRWi7r7w6"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      📝 Apply Now
+                    </a>
+                  </div>
+                )}
+
+                {/* PARTNER POPUP */}
+                {popupType === "partner" && (
+                  <div className="popup-actions">
+                    <a href="/Welcome Community Partners.pdf" target="_blank" rel="noopener noreferrer">
+                      📋 Welcome Kit
+                    </a>
+                    <a href="/Community Partners Proposal.pdf" target="_blank" rel="noopener noreferrer">
+                      📄 Detailed Proposal
+                    </a>
+                    <a
+                      href="https://forms.gle/zjhsxp2xrFvj8MkT8"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      📝 Apply Now
+                    </a>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    </section>
   );
 };
 
