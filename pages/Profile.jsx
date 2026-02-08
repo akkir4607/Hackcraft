@@ -203,7 +203,6 @@ const Profile = () => {
         )}
 
         <div className="vignette"></div>
-        <Timeline />
       </div>
     </>
   );
