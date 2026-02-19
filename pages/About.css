@@ -1,94 +1,313 @@
 /* ================= GLOBAL ================= */
-
 .about-section {
   position: relative;
   min-height: 100vh;
-  padding: clamp(60px, 8vw, 100px) 20px;
-  background: #06060c;
+  padding: 4rem 1rem;
+  background: linear-gradient(180deg, #0505056c 0%, #0a0a1a76 100%);
   overflow: hidden;
 }
 
-
-/* ================= BACKGROUND ================= */
-
-.cyber-grid {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(0,255,255,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,255,255,0.03) 1px, transparent 1px);
-  background-size: 50px 50px;
-  opacity: 0.2;
-  pointer-events: none;
-}
-
-
-/* ================= CONTAINER ================= */
-
 .about-container {
-  max-width: 1300px;
-  margin: auto;
+  max-width: 1200px;
+  margin: 0 auto;
   position: relative;
   z-index: 2;
 }
 
-
 /* ================= HEADER ================= */
-
 .about-header {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 3rem;
 }
 
 .about-title {
   font-family: "Audiowide", sans-serif;
-  font-size: clamp(2.2rem, 6vw, 3.5rem);
-  letter-spacing: 3px;
-  margin-bottom: 25px;
-  color: white;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
 }
 
 .highlight {
-  color: #e7c96b;
+  color: #8e63dd;
 }
 
-.about-description {
-  max-width: 750px;
-  margin: auto;
-  font-size: clamp(1rem, 2vw, 1.2rem);
-  color: rgba(255,255,255,0.8);
+.about-subtitle {
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.1rem;
+  color: #8e63dd;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 0.5rem;
+}
+
+/* ================= MAIN CONTENT ================= */
+.about-main-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.about-text-content {
+  padding-right: 2rem;
+}
+
+.about-content-title {
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.8rem;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.about-content-description {
+  font-size: 1.1rem;
   line-height: 1.7;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 2rem;
+}
+
+/* Stats */
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.stat-item {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 1.2rem;
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-family: "Audiowide", sans-serif;
+  font-size: 2rem;
+  color: #8e63dd;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.stat-label {
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Read More Button */
+.read-more-btn {
+  background: #8e63dd;
+  color: #050505;
+  border: none;
+  padding: 0.9rem 2rem;
+  border-radius: 6px;
+  font-family: "Orbitron", sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 1rem;
+}
+
+.read-more-btn:hover {
+  background: #00e6e6;
+  transform: translateY(-2px);
+}
+
+/* Image Container */
+.about-image-container {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  background: #020224;
+}
+
+.hackcraft-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.about-image-container:hover .hackcraft-image {
+  transform: scale(1.05);
+}
+
+/* ================= FEATURES ================= */
+.features-section {
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.8rem;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  position: relative;
 }
 
 
-/* ================= TOP FEATURES ================= */
 
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 25px;
-  margin-bottom: 80px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
 }
 
 .feature-card {
-  background: rgba(15,15,25,0.7);
-  border: 1px solid rgba(255,255,255,0.1);
-  padding: 35px 25px;
-  text-align: center;
+  background: rgba(8, 8, 8, 0.707);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 10px;
-  animation: fadeUp 0.6s ease forwards;
-  opacity: 0;
-  transition: 0.25s;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  text-align: center;
 }
 
 .feature-card:hover {
-  transform: translateY(-6px);
+  border-color: #8e63dd;
+  transform: translateY(-5px);
 }
 
-@keyframes fadeUp {
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.feature-title {
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.feature-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.bottom-grid .feature-card {
+  text-align: left;
+}
+
+
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1024px) {
+  .about-main-content {
+    gap: 2rem;
+  }
+  
+  .about-text-content {
+    padding-right: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-main-content {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  
+  .about-text-content {
+    padding-right: 0;
+    order: 2;
+  }
+  
+  .about-image-container {
+    order: 1;
+  }
+  
+  .about-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .about-details {
+    padding: 1.5rem;
+  }
+  
+  .details-header h2 {
+    font-size: 2rem;
+  }
+  
+  .timeline-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .timeline-date {
+    min-width: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-section {
+    padding: 3rem 1rem;
+  }
+  
+  .about-title {
+    font-size: 2rem;
+  }
+  
+  .about-content-title {
+    font-size: 1.5rem;
+  }
+  
+  .about-content-description {
+    font-size: 1rem;
+  }
+  
+  .stat-number {
+    font-size: 1.5rem;
+  }
+  
+  .stat-label {
+    font-size: 0.75rem;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .themes-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .prizes-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .about-details {
+    padding: 1.25rem;
+  }
+  
+  .details-header h2 {
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+  }
+}
+
+/* Animation for modal */
+@keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -96,98 +315,6 @@
   }
 }
 
-.feature-icon {
-  font-size: 2.5rem;
-  margin-bottom: 15px;
-}
-
-.feature-title {
-  font-family: "Orbitron", sans-serif;
-  font-size: 1.2rem;
-  margin-bottom: 12px;
-  color: white;
-}
-
-.feature-description {
-  font-size: 0.95rem;
-  color: rgba(255,255,255,0.7);
-  line-height: 1.5;
-}
-
-
-/* ================= DIVIDER ================= */
-
-.about-divider {
-  text-align: center;
-  font-family: "Audiowide";
-  font-size: clamp(1.4rem, 3vw, 2rem);
-  margin: 60px 0 50px;
-  color: #e7c96b;
-  letter-spacing: 2px;
-}
-
-
-/* ================= BOTTOM GRID ================= */
-
-.aboutt-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 35px 40px;
-}
-
-.aboutt-card {
-  background: rgba(20,20,30,0.7);
-  padding: 30px;
-  border-radius: 10px;
-  border: 1px solid rgba(255,255,255,0.08);
-  animation: fadeUp 0.6s ease forwards;
-  opacity: 0;
-  transition: 0.25s;
-}
-
-.aboutt-card:hover {
-  transform: translateY(-5px);
-}
-
-.aboutt-card-title {
-  font-size: 1.3rem;
-  color: #ff8fbf;
-  margin-bottom: 10px;
-  font-weight: 600;
-}
-
-.aboutt-card-description {
-  font-size: 0.95rem;
-  color: rgba(255,255,255,0.75);
-  line-height: 1.6;
-}
-
-
-/* ================= RESPONSIVE ================= */
-
-@media (max-width: 768px) {
-
-  .aboutt-grid {
-    grid-template-columns: 1fr;
-    gap: 25px;
-  }
-
-  .features-grid {
-    gap: 20px;
-  }
-
-}
-
-
-@media (max-width: 480px) {
-
-  .about-section {
-    padding: 50px 15px;
-  }
-
-  .feature-card,
-  .aboutt-card {
-    padding: 25px 18px;
-  }
-
+.about-details {
+  animation: fadeIn 0.3s ease-out;
 }

@@ -3,6 +3,7 @@ import "./Epic.css";
 
 import organiserLogo from "../images/500.png";
 import sponsorLogo from "../images/501.png";
+import hackshastra from "../images/Hackshastra.png"
 
 const Epic = () => {
   const [popupType, setPopupType] = useState(null);
@@ -75,27 +76,42 @@ const Epic = () => {
           </div>
         </div>
 
-        {/* ================= ORGANIZER ================= */}
-        <div className="org-section">
-          <h2>Organizer</h2>
-          <div className="org-card">
-            <img src={organiserLogo} alt="GITM" />
-            <span>Global Institute of Technology & Management</span>
-          </div>
-        </div>
+{/* ================= ORGANIZER + SPONSOR ================= */}
+<div className="org-co-wrapper">
 
-        {/* ================= SPONSORS ================= */}
-        <div className="partner-section">
+  {/* Organizer */}
+  <div className="org-section">
+    <h2>Organizer</h2>
+
+    <div className="org-card">
+      <img src={organiserLogo} alt="GITM" />
+      <span>Global Institute of Technology & Management</span>
+    </div>
+  </div>
+
+  {/* Sponsor 
+  <div className="co-section">
+    <h2>Co-Powered By</h2>
+
+    <div className="co-card">
+      <img src={sponsorLogo} alt="Alactic Inc" />
+      <span>Alactic Inc. (Co-Powered)</span>
+    </div>
+  </div>
+*/}
+</div>
+
+       {/* <div className="partner-section">
           <h2>Co-Powered By</h2>
           <div className="partner-grid">
             <div className="partner-card">
               <img src={sponsorLogo} alt="Alactic Inc" />
               <span>Alactic Inc. (Co-Powered)</span>
             </div>
-            {/* Additional sponsors can be added here */}
+             Additional sponsors can be added here 
           </div>
         </div>
-
+*/}
         {/* ================= COMMUNITY ================= */}
         <div className="partner-section">
           <h2>Community Partners</h2>
@@ -115,6 +131,22 @@ const Epic = () => {
                 }}
               />
               <span>Team Eklavya</span>
+            </a>
+            <a
+              href="https://hackshastra.in/"
+              target="_blank"
+              rel="noreferrer"
+              className="partner-card"
+            >
+              <img
+                src={hackshastra}
+                alt="HackShastra"
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = "https://via.placeholder.com/120x70/0d0d0d/00ffff?text=Team+Eklavya";
+                }}
+              />
+              <span>HackShastra</span>
             </a>
             {/* Additional community partners can be added here */}
           </div>

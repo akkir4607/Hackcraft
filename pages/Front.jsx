@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from "react-router-dom";
 import './Front.css';
-import Team from './Team';
 import Timeline from './Timeline';
 import Profile from './Profile';
 import About from './About';
 import Epic from './Epic';
-import img500 from '../images/500.png';
-import img501 from '../images/501.png';
+import Location from './Location';
 import img200 from '../images/200.png';
 import img201 from '../images/201.png';
 import img510 from '../images/2.png';
@@ -45,166 +42,120 @@ function CountdownTimer({ targetDate }) {
 
   return (
     <div className="countdown-container">
-      <motion.div 
-        className="countdown-box"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 1.2 }}
-      >
+
+      <div className="countdown-box">
         <div className="time-value">{String(timeLeft.days).padStart(2, '0')}</div>
         <div className="time-label">DAYS</div>
-      </motion.div>
-      
-      <motion.div 
-        className="countdown-box"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 1.3 }}
-      >
+      </div>
+
+      <div className="countdown-box">
         <div className="time-value">{String(timeLeft.hours).padStart(2, '0')}</div>
         <div className="time-label">HOURS</div>
-      </motion.div>
-      
-      <motion.div 
-        className="countdown-box"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 1.4 }}
-      >
+      </div>
+
+      <div className="countdown-box">
         <div className="time-value">{String(timeLeft.minutes).padStart(2, '0')}</div>
         <div className="time-label">MINUTES</div>
-      </motion.div>
-      
-      <motion.div 
-        className="countdown-box"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 1.5 }}
-      >
+      </div>
+
+      <div className="countdown-box">
         <div className="time-value">{String(timeLeft.seconds).padStart(2, '0')}</div>
         <div className="time-label">SECONDS</div>
-      </motion.div>
+      </div>
+
     </div>
   );
 }
 
 function Front() {
   return (
-    <div className="front-wrapper">
+    <div id='home' className="front-wrapper">
       <div className="front-container">
 
-        {/* Sidebar - Only visible on desktop */}
-        <div className="sidebar">
-          <a href="#home" className="sidebar-item">
-            <div className="sidebar-icon">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
-              </svg>
-            </div>
-            <span className="sidebar-label">HOME</span>
-          </a>
-          <a href="/profile" className="sidebar-item">
-            <div className="sidebar-icon">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-                <rect x="3" y="3" width="7" height="7"/>
-                <rect x="14" y="3" width="7" height="7"/>
-                <rect x="3" y="14" width="7" height="7"/>
-                <rect x="14" y="14" width="7" height="7"/>
-              </svg>
-            </div>
-            <span className="sidebar-label">EVENTS</span>
-          </a>
-          <a href="/team" className="sidebar-item">
-            <div className="sidebar-icon">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-                <path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/>
-              </svg>
-            </div>
-            <span className="sidebar-label">CONTACT</span>
-          </a>
-          <a href="/about" className="sidebar-item">
-            <div className="sidebar-icon">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-                <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
-              </svg>
-            </div>
-            <span className="sidebar-label">ABOUT US</span>
-          </a>
-        </div>
-
-        {/* Background Images */}
-        <motion.div 
-          className="bg-image-left"
-          initial={{ scale: 1.5, opacity: 0 }}
-          animate={{ scale: 1, opacity: 0.4 }}
-          transition={{ duration: 2, delay: 0.2 }}
-        >
+        {/* Background */}
+        <motion.div className="bg-image-left">
           <img src={img200} alt="Background Left" />
         </motion.div>
 
-        <motion.div 
-          className="bg-image-right"
-          initial={{ scale: 1.5, opacity: 0 }}
-          animate={{ scale: 1, opacity: 0.4 }}
-          transition={{ duration: 2, delay: 0.4 }}
-        >
+        <motion.div className="bg-image-right">
           <img src={img201} alt="Background Right" />
         </motion.div>
 
+
         {/* Main Content */}
         <div className="main-content">
-          <motion.div 
-            className="content-wrapper"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.6 }}
-          >
-            <motion.div 
-              className="event-logo"
-              initial={{ scale: 0.5, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 1, delay: 0.8 }}
-            >
+
+          <div className="content-wrapper">
+
+            <div className="event-logo">
               <img src={img510} alt="Event Logo" className="main-logo-img" />
-            </motion.div>
+            </div>
             
-            <motion.div className="event-tagline">
+            <div className="event-tagline">
               LEARN IT | CRACK IT | HACK IT!
-            </motion.div>
+            </div>
             
-            <motion.div className="event-date">
+            <div className="event-date">
               28th-29th MARCH 2026
-            </motion.div>
-            <br></br>
+            </div>
+        {/* ===== ACTION BUTTONS ABOVE TIMELINE ===== */}
+        <div className="action-buttons-section">
 
-            {/* Sponsors */}
-            <motion.div className="sponsor-section">
-              <div className="sponsor-column">
-                <div className="sponsor-label">HOSTED BY</div>
-                <div className="sponsor-logo">
-                  <img src={img500} alt="Host Logo" />
-                </div>
-              </div>
-              
-              <div className="sponsor-divider"></div>
-              
-              <div className="sponsor-column">
-                <div className="sponsor-label">CO-POWERED BY</div>
-                <div className="sponsor-logo">
-                  <img src={img501} alt="Co-Powered Logo" />
-                </div>
-              </div>
-            </motion.div>
+          <a
+            href="https://unstop.com/o/sHkeOP0?lb=K9UelnkJ&utm_medium=Share&utm_source=gitmgur42672&utm_campaign=Online_coding_challenge"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="box-btn"
+          >
+            Register Now
+          </a>
 
-            <CountdownTimer targetDate="2026-03-28T00:00:00" />
-          </motion.div>
+          <a
+            href="/Hackcraft 3.0 Welcome Participants.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="box-btn"
+          >
+            Welcome Kit
+          </a>
+
+          <a
+            href="https://chat.whatsapp.com/CV9PIzg73AM09ElbeUdvkg"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="box-btn whatsapp-btn"
+          >
+            <i className="fa fa-whatsapp"></i> WhatsApp Updates
+          </a>
+
         </div>
 
-        <Profile />
-        <About />
-        <Timeline />
-        <Epic />
-        <Team />
+            <CountdownTimer targetDate="2026-03-28T00:00:00" />
+
+          </div>
+
+        </div>
+
+
+        <section id="profile">
+          <Profile />
+        </section>
+
+        <section id="about">
+          <About />
+        </section>
+
+        <section id="timeline">
+          <Timeline />
+        </section>
+
+        <section id="epic">
+          <Epic />
+        </section>
+
+        <section id="location">
+          <Location />
+        </section>
 
       </div>
     </div>

@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Rajdhani:wght@400;500&display=swap');
 
 :root {
-  --primary: #00ffff;
+  --primary: #8e63dd;
   --bg: #050505;
   --card: #0d0d0d;
   --text: #ffffff;
@@ -28,7 +28,7 @@
   font-size: 2.3rem;
   letter-spacing: 4px;
   color: var(--text);
-  text-shadow: 0 0 12px rgba(0,255,255,0.4);
+  text-shadow: 0 0 12px rgba(81, 0, 255, 0.4);
 }
 
 .timeline-subtitle {
@@ -111,7 +111,7 @@
 
 .timeline-card {
   background: rgba(15,15,15,0.95);
-  border: 1px solid rgba(0,255,255,0.3);
+  border: 1px solid rgba(153, 0, 255, 0.3);
   border-radius: 14px;
   padding: 1.4rem;
   max-width: 420px;
@@ -122,7 +122,7 @@
 
 .timeline-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 0 25px rgba(0,255,255,0.3);
+  box-shadow: 0 0 25px rgba(119, 0, 255, 0.3);
 }
 
 /* DATE */

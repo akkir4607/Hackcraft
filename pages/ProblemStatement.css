@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Rajdhani:wght@400;500;600&family=Share+Tech+Mono&display=swap');
+
+/* ======================================= */
+/* ROOT VARIABLES */
+/* ======================================= */
+
+:root {
+  --neon-primary: #b16be7;
+  --neon-primary-rgb: 177, 107, 231;
+  --neon-pink: #ff00cc;
+  --neon-pink-rgb: 255, 0, 204;
+  --neon-purple: #9500ff;
+  --neon-purple-rgb: 149, 0, 255;
+  --bg-dark: #000000;
+  --bg-card: rgba(0, 0, 0, 0.75);
+  --text-muted: #a8a8a8;
+}
+
+/* ======================================= */
+/* MAIN PAGE */
+/* ======================================= */
+
+.problem-page {
+  padding: 5rem 2rem;
+  background: radial-gradient(circle at top, #0a0014 0%, #000 60%);
+  min-height: 100vh;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle animated grid background */
+.problem-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(177, 107, 231, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(177, 107, 231, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: gridMove 20s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes gridMove {
+  from { transform: translateY(0); }
+  to { transform: translateY(40px); }
+}
+
+/* ======================================= */
+/* MAIN TITLE */
+/* ======================================= */
+
+.problem-main-title {
+  text-align: center;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  letter-spacing: 0.35em;
+  font-family: 'Orbitron', sans-serif;
+  margin-bottom: 4rem;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 2;
+  text-shadow:
+    0 0 10px var(--neon-primary),
+    0 0 25px rgba(var(--neon-primary-rgb), 0.6);
+}
+
+/* ======================================= */
+/* SPECIAL INFO BOX */
+/* ======================================= */
+
+.special-info-box {
+  position: relative;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  border: 1px solid var(--neon-pink);
+  background: rgba(var(--neon-pink-rgb), 0.07);
+  backdrop-filter: blur(10px);
+  box-shadow:
+    0 0 20px rgba(var(--neon-pink-rgb), 0.3),
+    inset 0 0 15px rgba(var(--neon-pink-rgb), 0.15);
+  transition: 0.4s ease;
+}
+
+.special-info-box:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 0 35px rgba(var(--neon-pink-rgb), 0.6),
+    inset 0 0 20px rgba(var(--neon-pink-rgb), 0.3);
+}
+
+.web3-box {
+  border-color: var(--neon-purple);
+  background: rgba(var(--neon-purple-rgb), 0.08);
+  box-shadow:
+    0 0 25px rgba(var(--neon-purple-rgb), 0.4),
+    inset 0 0 20px rgba(var(--neon-purple-rgb), 0.2);
+}
+
+.special-info-box h2 {
+  font-family: 'Orbitron', sans-serif;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 12px currentColor;
+}
+
+.special-info-box p {
+  font-family: 'Rajdhani', sans-serif;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.bonus-text {
+  margin-top: 1rem;
+  font-weight: 600;
+  color: white;
+  text-shadow: 0 0 10px currentColor;
+}
+
+/* ======================================= */
+/* TRACK CONTAINER */
+/* ======================================= */
+
+.track-container {
+  position: relative;
+  margin-bottom: 4rem;
+  padding: 2.5rem;
+  background: var(--bg-card);
+  border: 1px solid rgba(var(--neon-primary-rgb), 0.3);
+  backdrop-filter: blur(8px);
+  transition: 0.4s ease;
+  z-index: 2;
+}
+
+.track-container:hover {
+  border-color: var(--neon-primary);
+  box-shadow:
+    0 0 30px rgba(var(--neon-primary-rgb), 0.4),
+    inset 0 0 20px rgba(var(--neon-primary-rgb), 0.1);
+}
+
+.sponsor-track {
+  border: 2px solid var(--neon-purple);
+  box-shadow:
+    0 0 35px rgba(var(--neon-purple-rgb), 0.5),
+    inset 0 0 20px rgba(var(--neon-purple-rgb), 0.2);
+}
+
+.track-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-shadow: 0 0 12px var(--neon-primary);
+}
+
+.track-description {
+  font-family: 'Rajdhani', sans-serif;
+  margin-bottom: 2rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ======================================= */
+/* PROBLEM GRID */
+/* ======================================= */
+
+.problem-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.2rem;
+}
+
+/* ======================================= */
+/* PROBLEM CARD */
+/* ======================================= */
+
+.problem-card {
+  position: relative;
+  padding: 1.2rem;
+  background: rgba(var(--neon-primary-rgb), 0.07);
+  border: 1px solid rgba(var(--neon-primary-rgb), 0.4);
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  transition: 0.35s ease;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.problem-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255,255,255,0.1) 50%,
+    transparent 100%
+  );
+  transform: translateX(-100%);
+  transition: 0.6s;
+}
+
+.problem-card:hover::before {
+  transform: translateX(100%);
+}
+
+.problem-card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 0 25px rgba(var(--neon-primary-rgb), 0.6);
+}
+
+/* ======================================= */
+/* SPECIAL HIGHLIGHTS */
+/* ======================================= */
+
+.agi-highlight {
+  border-color: var(--neon-pink);
+  background: rgba(var(--neon-pink-rgb), 0.15);
+  box-shadow:
+    0 0 20px rgba(var(--neon-pink-rgb), 0.5);
+}
+
+.web3-highlight {
+  border-color: var(--neon-purple);
+  background: rgba(var(--neon-purple-rgb), 0.15);
+  box-shadow:
+    0 0 20px rgba(var(--neon-purple-rgb), 0.6);
+}
+
+/* Combined Highlight */
+.web3-highlight.agi-highlight {
+  border-color: #cc00ff;
+  box-shadow:
+    0 0 30px rgba(204, 0, 255, 0.8);
+}
+
+/* ======================================= */
+/* RESPONSIVE */
+/* ======================================= */
+
+@media (max-width: 768px) {
+  .problem-page {
+    padding: 3rem 1rem;
+  }
+
+  .track-container {
+    padding: 1.8rem;
+  }
+
+  .problem-card {
+    font-size: 0.8rem;
+  }
+}

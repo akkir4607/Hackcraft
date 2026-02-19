@@ -1,0 +1,150 @@
+/* ================= LOCATION SECTION ================= */
+
+.location-section {
+  margin: 5rem 0;
+  text-align: center;
+}
+
+.location-subtitle {
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 2.5rem;
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+/* Main Grid */
+.location-container {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 2.5rem;
+  align-items: stretch;
+  margin-top: 2rem;
+}
+
+
+/* Map Box */
+.map-box {
+  position: relative;
+  width: 100%;
+  min-height: 350px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 0 25px rgba(142,99,221,0.2);
+  background: #020224;
+}
+
+.map-box iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+
+/* Info Box */
+.location-info {
+    background: var(--glass-dark);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.location-info h3 {
+  font-family: "Orbitron", sans-serif;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.location-info p {
+  color: rgba(255,255,255,0.8);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+
+/* Details Grid */
+.location-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.location-details div {
+  background: rgba(20,20,35,0.95);
+  padding: 0.9rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.location-details span {
+  display: block;
+  font-size: 0.8rem;
+  color: #8e63dd;
+  margin-bottom: 0.2rem;
+  letter-spacing: 1px;
+}
+
+.location-details p {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+
+/* Direction Button */
+.direction-btn {
+  display: inline-block;
+  background: #8e63dd;
+  color: #050505;
+  padding: 0.9rem 1.8rem;
+  border-radius: 6px;
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.85rem;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+}
+
+.direction-btn:hover {
+  background: #00e6e6;
+  transform: translateY(-2px);
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+
+  .location-container {
+    grid-template-columns: 1fr;
+  }
+
+  .map-box {
+    min-height: 280px;
+  }
+
+  .location-info {
+    text-align: center;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .location-details {
+    grid-template-columns: 1fr;
+  }
+
+  .location-info {
+    padding: 2rem 1.5rem;
+  }
+
+}
